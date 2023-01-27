@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Homepage</title>
+        <title>Homepageaa</title>
       </Head>
 
       <main className="bg-slate-800">homepage</main>
