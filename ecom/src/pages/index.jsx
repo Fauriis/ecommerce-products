@@ -1,13 +1,17 @@
 import Head from "next/head";
+import { Layout } from "../layouts";
 
 const Home = () => {
   return (
     <>
       <Head>
-        <title>Homepageaa</title>
+        <title>Homepage</title>
       </Head>
 
-      <main className="bg-slate-800">homepage</main>
+      <Layout>
+      <main>www</main>
+      </Layout>
+
     </>
   );
 };

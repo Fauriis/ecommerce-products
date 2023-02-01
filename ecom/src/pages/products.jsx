@@ -1,11 +1,11 @@
 import Head from "next/head";
 import { Layout } from "../layouts";
 
-const ContactPage = () => {
+const Products = () => {
   return (
     <>
       <Head>
-        <title>Contact PAGE</title>
+        <title>Products</title>
       </Head>
 
       <Layout>
@@ -15,4 +15,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default Products;
