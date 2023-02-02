@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { GridControls } from "../components/catalog/GridControls";
 import { Layout } from "../layouts";
 
 const Home = () => {
@@ -9,9 +10,14 @@ const Home = () => {
       </Head>
 
       <Layout>
-      <main>www</main>
-      </Layout>
+        <main className="container px-4 lg:px-4 mx-auto">
+          <div className="flex justify-start text-zinc-400">
+            <GridControls></GridControls>
+          </div>
 
+  
+        </main>
+      </Layout>
     </>
   );
 };
