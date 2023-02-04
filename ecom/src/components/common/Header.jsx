@@ -2,20 +2,53 @@ import { BiMenu } from "react-icons/bi";
 import { GiRunningShoe } from "react-icons/gi";
 import Link from "next/link";
 import { useState } from "react";
+import { css } from "@emotion/css";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const underline = css`
+    display: inline-block;
+    position: relative;
+    color: white;
+    font-weight: bold;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: black;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  `;
+
   return (
     <>
       <section className="flex justify-between items-center h-full lg:h-10 z-10 relative">
-   
+      <h1
+          className={`uppercase text-orange-900 tracking-wide font-semibold ${
+            menuOpen ? "hidden" : "block"
+          }`}
+        >
+          We love fashion
+        </h1>
         <Link href="/" title="Home">
-          <GiRunningShoe size={30} className="hover:text-black hover:animate-spin"></GiRunningShoe>
+          <GiRunningShoe
+            size={30}
+            className="hover:text-black hover:animate-spin"
+          ></GiRunningShoe>
         </Link>
-
-
-        <h1 className={`uppercase text-orange-900 tracking-wide font-semibold ${menuOpen ? 'hidden' : 'block'}`}>We love fashion</h1>
-
+  
 
         <button
           title="Menu"
@@ -30,23 +63,33 @@ export const Header = () => {
 
       <nav
         className={`absolute left-0 ${
-          menuOpen ? " top-0 transform translate-y-5 transition duration-500" : "-top-full "
+          menuOpen
+            ? " top-0 transition-all duration-700 ease-in-out"
+            : "-top-full transition-all duration-700 ease-in transform scale-y-50"
         }  h-1/6 w-screen text-white bg-yellow-300`}
       >
         <ul className=" flex justify-center gap-6 mt-10 font-thin text-xl lg:uppercase">
-          <li className="hover:text-black lg:font-bold transition-colors duration-500">
-            <Link href="/" title="Home">Home</Link>
+          <li className={`${underline} transition-colors duration-500 hover:text-black`}>
+            <Link href="/" title="Home">
+              Home
+            </Link>
           </li>
-          <li className="hover:text-black lg:font-bold transition-colors duration-500">
-            <Link href="/contact" title="Contact">Contact</Link>
+          <li className={`${underline} transition-colors duration-500 hover:text-black`}>
+            <Link href="/contact" title="Contact">
+              Contact
+            </Link>
           </li>
 
-          <li className="hover:text-black lg:font-bold transition-colors duration-500">
-            <Link href="/products" title="Products">Products</Link>
+          <li className={`${underline} transition-colors duration-500 hover:text-black`}>
+            <Link href="/products" title="Products">
+              Products
+            </Link>
           </li>
 
-          <li className="hover:text-black lg:font-bold transition-colors duration-500">
-            <Link href="/cart" title="Cart">Cart</Link>
+          <li className={`${underline} transition-colors duration-500 hover:text-black`}>
+            <Link href="/cart" title="Cart">
+              Cart
+            </Link>
           </li>
         </ul>
       </nav>

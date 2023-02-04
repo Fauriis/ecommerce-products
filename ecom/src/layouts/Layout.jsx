@@ -4,7 +4,7 @@ import { Header } from "../components/common/Header";
 
 const yellow = "#f8da33";
 const white = "#fff";
-const blue = "#081747";
+const blue = "#081231";
 
 export const Layout = ({ children }) => {
   const gridCss = css`
