@@ -14,7 +14,7 @@ export const Footer = () => {
 
   return (
     <>
-      <section className="container px-4 lg:px-5 mx-auto">
+      <section className="container px-4 lg:px-5 mx-auto ">
         <div className="p-4 text-white lg:flex lg:justify-between">
           <div className="mt-5">
             <h1 className="font-bold text-white mb-4">About us</h1>
@@ -83,7 +83,7 @@ export const Footer = () => {
 
       <div className="border border-t border-l-neutral-900"></div>
 
-      <section className="container px-4 lg:px-5 mx-auto">
+      <section className="container px-4 lg:px-5 mx-auto ">
         <div className="flex justify-center items-center mt-3">
           <button title="Back to top" onClick={scrollToTop}>
             <BiArrowToTop className="text-white"></BiArrowToTop>

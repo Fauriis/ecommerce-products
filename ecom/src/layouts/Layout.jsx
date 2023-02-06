@@ -22,7 +22,8 @@ export const Layout = ({ children }) => {
 
   const footerCss = css`
     background-color: ${blue};
-    padding: 0 16px;
+    padding: 6px 15px 6px 15px;
+
   `;
 
   return (

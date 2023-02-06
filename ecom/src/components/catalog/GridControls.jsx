@@ -7,7 +7,7 @@ export const GridControls = () => {
 
   return (
     <>
-    <div>
+    <div className="hidden lg:block">
       <label htmlFor="items" id="items">
         Items per row:{" "}
       </label>

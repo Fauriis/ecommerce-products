@@ -88,6 +88,7 @@ export const Header = () => {
 
           <li className={`${underline} transition-colors duration-500 hover:text-black`}>
             <Link href="/cart" title="Cart">
+              {/* tre sa scrii cu litere mici fisierul ca sa ti l ia */}
               Cart
             </Link>
           </li>
