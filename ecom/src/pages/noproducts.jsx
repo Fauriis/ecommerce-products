@@ -20,7 +20,7 @@ const ProductsNotFound = () => {
             ></AiOutlineDropbox>
             <h1 className="uppercase font-bold mt-2">No order found</h1>
             <p className="my-2 leading-loose lg:mt-6 text-gray-600 font-semibold">
-              Looks like you havent made your order yet!
+              Looks like you have not made your order yet!
             </p>
           </div>
 
