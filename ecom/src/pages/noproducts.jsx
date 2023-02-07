@@ -24,15 +24,13 @@ const ProductsNotFound = () => {
             </p>
           </div>
 
-          
-        <button
-          type="button"
-          className="uppercase font-bold drop-shadow-xl text-black bg-yellow-400 mt-4 px-5 py-2 rounded-md hover:bg-yellow-50"
-        >
-          <Link href="/">back home</Link>
-        </button>
+          <button
+            type="button"
+            className="uppercase font-bold drop-shadow-xl text-black bg-yellow-400 mt-4 px-5 py-2 rounded-md hover:bg-yellow-50"
+          >
+            <Link href="/">back home</Link>
+          </button>
         </section>
-
       </Layout>
     </>
   );
