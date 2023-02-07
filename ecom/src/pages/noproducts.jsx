@@ -14,7 +14,7 @@ const ProductsNotFound = () => {
         <section className="my-5 mx-6 text-center lg:justify-center lg:items-center lg:flex lg:flex-col">
           <div className="bg-yellow-100 lg:py-8 lg:h-80 lg:w-1/4 relative -z-10 rounded-md py-4 drop-shadow-xl">
             <AiOutlineDropbox
-              size={50}
+              size="50"
               color="navy"
               className="inline-block lg:mt-5"
             ></AiOutlineDropbox>
