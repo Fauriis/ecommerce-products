@@ -14,7 +14,7 @@ export const Footer = () => {
 
   return (
     <>
-      <section className="container px-4 lg:px-5 mx-auto ">
+      <section className="container px-4 lg:px-5 mx-auto">
         <div className="p-4 text-white lg:flex lg:justify-between">
           <div className="mt-5">
             <h1 className="font-bold text-white mb-4">About us</h1>
@@ -83,7 +83,7 @@ export const Footer = () => {
 
       <div className="border border-t border-l-neutral-900"></div>
 
-      <section className="container px-4 lg:px-5 mx-auto ">
+      <section className="container px-4 lg:px-5 mx-auto">
         <div className="flex justify-center items-center mt-3">
           <button title="Back to top" onClick={scrollToTop}>
             <BiArrowToTop className="text-white"></BiArrowToTop>
@@ -91,27 +91,39 @@ export const Footer = () => {
         </div>
 
         <div className="text-gray-400 p-4 lg:flex lg:justify-between ">
-            <p>Copyright ©2023 All rights reserved by Sneakers.ro</p>
-          
-          
+          <p>Copyright ©2023 All rights reserved by Sneakers.ro</p>
+
           <ul className="flex gap-4 lg:items-center lg:justify-end mt-2 lg:mt-0">
-            
-
-            <li>
-              <a href="facebook.com" title="Facebook">
-                <RiFacebookFill className="text-white"></RiFacebookFill>{" "}
+            <li className="hover:animate-bounce inline-block text-white">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                title="Facebook"
+                rel="noopener noreferrer"
+              >
+                <RiFacebookFill></RiFacebookFill>{" "}
               </a>
             </li>
 
-            <li>
-              <a href="twitter.com" title="Twitter">
-                <AiOutlineTwitter className="text-white"></AiOutlineTwitter>{" "}
+            <li className="hover:animate-bounce inline-block text-white">
+              <a
+                href="https://www.twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Twitter"
+              >
+                <AiOutlineTwitter></AiOutlineTwitter>{" "}
               </a>
             </li>
 
-            <li>
-              <a href="sneakers.com" title="Our Site">
-                <BsGlobe2 className="text-white"></BsGlobe2>{" "}
+            <li className="hover:animate-bounce inline-block text-white">
+              <a
+                href="https://www.twitter.com/"
+                target="_blank"
+                title="Our site"
+                rel="noopener noreferrer"
+              >
+                <BsGlobe2></BsGlobe2>{" "}
               </a>
             </li>
           </ul>

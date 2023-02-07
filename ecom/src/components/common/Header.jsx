@@ -35,7 +35,7 @@ export const Header = () => {
   return (
     <>
       <section className="flex justify-between items-center h-full lg:h-10 z-10 relative">
-      <h1
+        <h1
           className={`uppercase text-orange-900 tracking-wide font-semibold ${
             menuOpen ? "hidden" : "block"
           }`}
@@ -48,7 +48,6 @@ export const Header = () => {
             className="hover:text-black hover:animate-spin"
           ></GiRunningShoe>
         </Link>
-  
 
         <button
           title="Menu"
@@ -69,24 +68,32 @@ export const Header = () => {
         }  h-1/6 w-screen text-white bg-yellow-300`}
       >
         <ul className=" flex justify-center gap-6 mt-10 font-thin text-xl lg:uppercase">
-          <li className={`${underline} transition-colors duration-500 hover:text-black`}>
+          <li
+            className={`${underline} transition-colors duration-500 hover:text-black`}
+          >
             <Link href="/" title="Home">
               Home
             </Link>
           </li>
-          <li className={`${underline} transition-colors duration-500 hover:text-black`}>
+          <li
+            className={`${underline} transition-colors duration-500 hover:text-black`}
+          >
             <Link href="/contact" title="Contact">
               Contact
             </Link>
           </li>
 
-          <li className={`${underline} transition-colors duration-500 hover:text-black`}>
+          <li
+            className={`${underline} transition-colors duration-500 hover:text-black`}
+          >
             <Link href="/products" title="Products">
               Products
             </Link>
           </li>
 
-          <li className={`${underline} transition-colors duration-500 hover:text-black`}>
+          <li
+            className={`${underline} transition-colors duration-500 hover:text-black`}
+          >
             <Link href="/cart" title="Cart">
               {/* tre sa scrii cu litere mici fisierul ca sa ti l ia */}
               Cart

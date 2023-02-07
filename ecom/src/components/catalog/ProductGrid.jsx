@@ -1,14 +1,15 @@
 import { css } from "@emotion/css";
 import React from "react";
+import ProductsNotFound from "../../pages/noproducts";
 
 export const ProductGrid = ({ products = [] }) => {
   if (products.length <= 0) {
-    return <>There are no products here</>;
+    return <ProductsNotFound></ProductsNotFound>
   }
 
   const gridCss = css`
     display: grid;
-    row-gap: 32px;
+    row-gap: 30px;
 
     @media (min-width: 1024px) {
         grid-template-columns: repeat(4, 1fr);
