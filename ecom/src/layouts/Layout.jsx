@@ -7,14 +7,12 @@ const white = "#fff";
 const blue = "#081231";
 
 export const Layout = ({ children }) => {
-  const gridCss = css`
-
-  `;
+  const gridCss = css``;
 
   const headerCss = css`
     background-color: ${yellow};
     color: ${white};
- 
+
     padding: 6px 15px 6px 15px;
   `;
 
@@ -23,7 +21,6 @@ export const Layout = ({ children }) => {
   const footerCss = css`
     background-color: ${blue};
     padding: 6px 15px 6px 15px;
-
   `;
 
   return (

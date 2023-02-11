@@ -34,7 +34,7 @@ export const ProductGrid = ({ products = [] }) => {
                   {name}
                 </h1>
 
-                <div className="text-zinc-500 font-light">{price}</div>
+                <div className="text-zinc-500 font-light mb-2">{price}</div>
               </section>
             </article>
           </li>
