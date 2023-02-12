@@ -10,8 +10,8 @@ import useCollapse from "react-collapsed";
 import { useState } from "react";
 
 const ContactPage = () => {
-  const [isExpanded, setExpanded] = useState(false);
-  const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
+  // const [isExpanded, setExpanded] = useState(false);
+  // const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
 
   return (
     <>
@@ -30,7 +30,7 @@ const ContactPage = () => {
           </div>
         </section>
 
-        <section className="flex text-center">
+        {/* <section className="flex text-center">
           <div>
             <button
               {...getToggleProps({
@@ -76,7 +76,7 @@ const ContactPage = () => {
               <span>Send us a message here:</span> <br /> Bucuresti, Romania
             </div>
           </div>
-        </section>
+        </section> */}
       </Layout>
     </>
   );
