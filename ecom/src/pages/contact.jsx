@@ -1,6 +1,11 @@
 import Head from "next/head";
 import { Layout } from "../layouts";
-import { HiHome, HiPhone, HiOutlineMail } from "react-icons/hi";
+import {
+  HiHome,
+  HiPhone,
+  HiOutlineMail,
+  HiInformationCircle,
+} from "react-icons/hi";
 import useCollapse from "react-collapsed";
 import { useState } from "react";
 
@@ -15,73 +20,63 @@ const ContactPage = () => {
       </Head>
 
       <Layout>
-        {/* <main className="container flex items-center justify-center my-5">
-          <section className="mx-4 lg:mx-0 ">
-            <div className="">
-              <h1>Contact us</h1>
-              <h3>Get in touch with us</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Quisquam molestias voluptate commodi, hic dolore, modi, autem
-                vel nesciunt blanditiis error temporibus. Pariatur, minima
-                impedit error rerum officiis temporibus consectetur accusamus.
-              </p>
+        <section className="mt-10">
+          <div className="text-center">
+            <h1>Contact us</h1>
+            <p>
+              Get in touch and let us know how we can help you! Click bellow to
+              get more informations!
+            </p>
+          </div>
+        </section>
 
-              <ul>
-                <li className="flex flex-row gap-2">
-                  <HiHome
-                    className="mt-3 bg-blue-900 rounded-sm"
-                    size={20}
-                    color="white"
-                  ></HiHome>
-                  <p>
-                    <span>Our location</span> <br /> Bucuresti, Romania
-                  </p>
-                </li>
-
-                <li className="flex flex-row gap-2">
-                  <HiPhone
-                    className="mt-3 bg-blue-900 rounded-sm"
-                    size={20}
-                    color="white"
-                  ></HiPhone>
-                  <p>
-                    <span>Phone Number</span> <br /> (+04)867939583
-                  </p>
-                </li>
-
-                <li className="flex flex-row gap-2">
-                  <HiOutlineMail className="mt-3 bg-blue-900 rounded-sm"
-                    size={20}
-                    color="white"></HiOutlineMail>
-                  <p>
-                    <span>Email Address</span> <br /> sneakers@sneakers.ro
-                  </p>
-                </li>
-              </ul>
+        <section className="flex text-center">
+          <div>
+            <button
+              {...getToggleProps({
+                onClick: () => setExpanded((prevExpanded) => !prevExpanded),
+              })}
+            >
+              {isExpanded ? (
+                <HiInformationCircle
+                  title="More info"
+                  className="mt-3 bg-blue-900 rounded-sm"
+                  size={40}
+                  color="white"
+                /> 
+              ) : (
+                <HiInformationCircle
+                  className="mt-3 bg-blue-900 rounded-sm"
+                  size={40}
+                  color="white"
+                />
+              )}
+            </button>
+            <div {...getCollapseProps()}>
+              <HiPhone
+                title="our location"
+                className="mt-3 bg-blue-900 rounded-sm"
+                size={20}
+                color="white"
+              />
+              <span>Our phone</span> <br /> Bucuresti, Romania
+              <HiHome
+                title="our location"
+                className="mt-3 bg-blue-900 rounded-sm"
+                size={20}
+                color="white"
+              />
+              <span>Our location</span> <br /> Bucuresti, Romania
+              <HiOutlineMail
+                title="Our email"
+                className="mt-3 bg-blue-900 rounded-sm"
+                size={20}
+                color="white"
+              />
+              <span>Send us a message here:</span> <br /> Bucuresti, Romania
             </div>
-
-
-            <div className="bg-blue-900 px-2 py-3 rounded-md mt-4">
-              <form action="" className="text-center">
-                <input type="text" placeholder="Your Name" className="px-5" />
-                <input type="text" placeholder="Your Name" className="px-5" />
-                <input type="text" placeholder="Your Name" className="px-5" />
-              </form>
-            </div>
-          </section>
-        </main> */}
-        <div>
-          <button
-            {...getToggleProps({
-              onClick: () => setExpanded((prevExpanded) => !prevExpanded),
-            })}
-          >
-            {isExpanded ? "Collapse" : "Expand"}
-          </button>
-          <section {...getCollapseProps()}>Collapsed content 🙈</section>
-        </div>
-        
+          </div>
+        </section>
       </Layout>
     </>
   );
