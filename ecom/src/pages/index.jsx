@@ -1,13 +1,25 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { baseUrl } from "..";
 import { CartControl } from "../components/cart/CartControl";
 import { GridControls } from "../components/catalog/GridControls";
 import { ProductGrid } from "../components/catalog/ProductGrid";
 import { Layout } from "../layouts";
 
 const Home = () => {
-const [perRow, setPerRow] = useState(4);
+  const [perRow, setPerRow] = useState(4);
 
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    fetch(`${baseUrl}/products?limit=12`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        setProducts(result);
+      });
+  }, []);
 
   return (
     <>
@@ -24,11 +36,9 @@ const [perRow, setPerRow] = useState(4);
           </header>
 
           <section className="mt-16">
-            <ProductGrid products={Array(12).fill({
-              name:'Prod',
-              price: '$12',
-            })}
-            perRow={perRow}
+            <ProductGrid
+              products={products}
+              perRow={perRow}
             ></ProductGrid>
           </section>
         </main>

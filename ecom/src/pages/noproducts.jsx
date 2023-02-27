@@ -10,7 +10,7 @@ const ProductsNotFound = () => {
         <title>Products not found</title>
       </Head>
 
-      <Layout>
+     
         <section className="my-5 mx-6 text-center lg:justify-center lg:items-center lg:flex lg:flex-col">
           <div className="bg-yellow-100 lg:py-8 lg:h-80 lg:w-1/4 relative -z-10 rounded-md py-4 drop-shadow-xl">
             <AiOutlineDropbox
@@ -31,7 +31,7 @@ const ProductsNotFound = () => {
             <Link href="/">back home</Link>
           </button>
         </section>
-      </Layout>
+
     </>
   );
 };
