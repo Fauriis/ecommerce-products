@@ -1,88 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-// const buttonClasses = `hidden lg:block w-14 h-14 border-l border-zinc-400 flex justify-center items-center`;
+const options = ["1", "2", "4"];
 
-export const GridControls = () => {
-  const [itemsPerRow, setItemsPerRow] = useState("1/row");
+export const GridControls = ({ setPerRow = () => {} }) => {
+  const [itemsPerRow, setItemsPerRow] = useState(options[0]);
+
+  useEffect(() => {
+    const perRow = parseInt(itemsPerRow);
+
+    setPerRow(perRow);
+  }, [itemsPerRow]);
 
   return (
     <>
-    <div className="hidden lg:block">
-      <label htmlFor="items" id="items">
-        Items per row:{" "}
-      </label>
-      <select name="items" id="items" className="bg-gray-200 text-black p-2 cursor-pointer">
-        <option>---</option>
-        <option
-          value="1 per row"
-          onClick={() => {
-            setItemsPerRow("1/row");
-          }}
+      <div className="hidden lg:block">
+        <label htmlFor="items" id="items">
+          Items per row:{" "}
+        </label>
+
+        <select
+          className="bg-gray-200 text-black p-2 cursor-pointer"
+          value={itemsPerRow}
+          onChange={(e) => setItemsPerRow(e.target.value)}
         >
-          1 per row
-        </option>
-        <option
-          value="2 per row"
-          onClick={() => {
-            setItemsPerRow("2/row");
-          }}
-        >
-          2 per row
-        </option>
-        <option
-          value="4 per row"
-          onClick={() => {
-            setItemsPerRow("4/row");
-          }}
-        >
-          4 per row
-        </option>
-      </select>
+          {options.map((value) => (
+            <option value={value} key={value}>
+              {value}
+            </option>
+          ))}
+        </select>
       </div>
-
-      {/* <ul className="flex border border-l-0 border-zinc-400">
-      <li>
-        <button
-          title="One per row"
-          className={`${buttonClasses} ${
-            itemsPerRow === "1/row" ? "bg-black text-white" : ""
-          }`}
-          onClick={() => {
-            setItemsPerRow("1/row");
-          }}
-        >
-          1
-        </button>
-      </li>
-
-      <li>
-        <button
-          title="Two per row"
-          className={`${buttonClasses} ${
-            itemsPerRow === "2/row" ? "bg-black text-white" : ""
-          }`}
-          onClick={() => {
-            setItemsPerRow("2/row");
-          }}
-        >
-          2
-        </button>
-      </li>
-
-      <li>
-        <button
-          title="Four per row"
-          className={`${buttonClasses} ${
-            itemsPerRow === "4/row" ? "bg-black text-white" : ""
-          }`}
-          onClick={() => {
-            setItemsPerRow("4/row");
-          }}
-        >
-          4
-        </button>
-      </li>
-    </ul> */}
     </>
   );
 };

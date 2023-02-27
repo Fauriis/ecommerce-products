@@ -2,7 +2,7 @@ import { css } from "@emotion/css";
 import React from "react";
 import ProductsNotFound from "../../pages/noproducts";
 
-export const ProductGrid = ({ products = [] }) => {
+export const ProductGrid = ({ products = [], perRow = 4 }) => {
   if (products.length <= 0) {
     return <ProductsNotFound></ProductsNotFound>
   }
@@ -12,7 +12,7 @@ export const ProductGrid = ({ products = [] }) => {
     row-gap: 30px;
 
     @media (min-width: 1024px) {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(${perRow}, 1fr);
         column-gap: 32px;
     }
   `;

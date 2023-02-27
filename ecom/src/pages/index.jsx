@@ -1,10 +1,14 @@
 import Head from "next/head";
+import { useState } from "react";
 import { CartControl } from "../components/cart/CartControl";
 import { GridControls } from "../components/catalog/GridControls";
 import { ProductGrid } from "../components/catalog/ProductGrid";
 import { Layout } from "../layouts";
 
 const Home = () => {
+const [perRow, setPerRow] = useState(4);
+
+
   return (
     <>
       <Head>
@@ -14,7 +18,7 @@ const Home = () => {
       <Layout>
         <main className="container px-4 lg:px-4 mx-auto">
           <header className="flex justify-start text-zinc-400">
-            <GridControls></GridControls>
+            <GridControls setPerRow={setPerRow}></GridControls>
 
             <CartControl></CartControl>
           </header>
@@ -23,7 +27,9 @@ const Home = () => {
             <ProductGrid products={Array(12).fill({
               name:'Prod',
               price: '$12',
-            })}></ProductGrid>
+            })}
+            perRow={perRow}
+            ></ProductGrid>
           </section>
         </main>
       </Layout>

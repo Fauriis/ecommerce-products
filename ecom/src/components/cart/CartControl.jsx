@@ -7,7 +7,7 @@ export const CartControl = () =>{
     <ul>
         <li className='flex justify-center items-center '>
             <Link href="/cart">
-                <AiOutlineShoppingCart size={20}></AiOutlineShoppingCart>
+                <AiOutlineShoppingCart size={30}></AiOutlineShoppingCart>
             </Link>
         </li>
     </ul>

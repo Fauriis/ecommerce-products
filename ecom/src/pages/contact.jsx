@@ -25,8 +25,8 @@ const ContactPage = () => {
             </ul>
           </div>
 
-          <div className="lg:mt-8 lg:flex lg:justify-center items-center justify-center flex">
-            <div className="">
+          <div className="lg:mt-8 lg:flex lg:justify-center">
+            <div className="inline-block text-center">
               <svg
                 width="190px"
                 height="190px"
@@ -112,14 +112,16 @@ const ContactPage = () => {
               </svg>
             </div>
 
-            <div>
-              <form action="" className="lg:flex lg:flex-col">
-                <input type="text" placeholder="name" />
-                <input type="text" placeholder="name" />
-                <input type="text" placeholder="name" />
-                <input type="text" placeholder="name" />
-                <input type="text" placeholder="name" />
+            <div className='mx-4'>
+              <form action="" className="lg:flex lg:flex-col" id="form">
+                <input type="text" className="rounded-md bg-zinc-100 my-2" placeholder="First Name" required/>
+                <input type="text" className="rounded-md bg-zinc-100 my-2" placeholder="Last Name" required />
+                <input type="email" className="rounded-md bg-zinc-100 my-2" placeholder="Whats your email?" required />
+                <textarea name="" id="" cols="30" rows="4" className="rounded-md bg-zinc-100 my-2" placeholder="Your questions..."></textarea>
+
               </form>
+              <button type="submit" form="form" className="bg-yellow-500 mt-4 text-sm px-5 py-2 font-medium uppercase rounded-md hover:bg-zinc-100">Send message</button>
+
             </div>
           </div>
         </section>
