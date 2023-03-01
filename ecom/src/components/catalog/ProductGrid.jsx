@@ -2,6 +2,7 @@ import { css } from "@emotion/css";
 import React from "react";
 import ProductsNotFound from "../../pages/noproducts";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export const ProductGrid = ({ products = [], perRow = 4 }) => {
   if (products.length <= 0) {
@@ -28,7 +29,20 @@ export const ProductGrid = ({ products = [], perRow = 4 }) => {
             <article className="w-full">
               <header>
                 <div className="w-full h-72 text-center">
-                  <img src={image} className="h-full inline"></img>
+                  <motion.img
+                    initial={{
+                      x: -60,
+                      opacity: 0,
+                    }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{
+                      scale: 0.8,
+                      borderRadius: "10%",
+                    }}
+                    src={image}
+                    className="h-full inline"
+                  ></motion.img>
                 </div>
               </header>
 
