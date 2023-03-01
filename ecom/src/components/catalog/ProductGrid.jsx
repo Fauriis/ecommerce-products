@@ -41,7 +41,7 @@ export const ProductGrid = ({ products = [], perRow = 4 }) => {
                       borderRadius: "10%",
                     }}
                     src={image}
-                    className="h-full inline"
+                    className="h-full inline cursor-pointer"
                   ></motion.img>
                 </div>
               </header>

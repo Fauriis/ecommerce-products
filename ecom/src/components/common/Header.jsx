@@ -36,7 +36,7 @@ export const Header = () => {
     <>
       <section className="flex justify-between items-center h-full lg:h-10 z-10 relative">
         <h1
-          className={`uppercase text-orange-900 tracking-wide font-semibold ${
+          className={`uppercase text-black tracking-wide font-semibold ${
             menuOpen ? "hidden" : "block"
           }`}
         >
@@ -65,7 +65,7 @@ export const Header = () => {
           menuOpen
             ? " top-0 transition-all duration-700 ease-in-out"
             : "-top-full transition-all duration-700 ease-in transform scale-y-50"
-        }  h-1/6 w-screen text-white bg-yellow-300`}
+        }  h-1/6 w-screen text-white bg-pink-200`}
       >
         <ul className=" flex justify-center gap-6 mt-10 font-thin text-xl lg:uppercase">
           <li

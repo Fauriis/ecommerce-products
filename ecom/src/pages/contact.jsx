@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Layout } from "../layouts";
 import { HiHome, HiPhone, HiOutlineMail } from "react-icons/hi";
 import { BsGlobe } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const ContactPage = () => {
   return (
@@ -112,16 +113,42 @@ const ContactPage = () => {
               </svg>
             </div>
 
-            <div className='mx-4'>
+            <div className="mx-4">
               <form action="" className="lg:flex lg:flex-col" id="form">
-                <input type="text" className="rounded-md bg-zinc-100 my-2" placeholder="First Name" required/>
-                <input type="text" className="rounded-md bg-zinc-100 my-2" placeholder="Last Name" required />
-                <input type="email" className="rounded-md bg-zinc-100 my-2" placeholder="Whats your email?" required />
-                <textarea name="" id="" cols="30" rows="4" className="rounded-md bg-zinc-100 my-2" placeholder="Your questions..."></textarea>
-
+                <input
+                  type="text"
+                  className="rounded-md bg-zinc-100 my-2"
+                  placeholder="First Name"
+                  required
+                />
+                <input
+                  type="text"
+                  className="rounded-md bg-zinc-100 my-2"
+                  placeholder="Last Name"
+                  required
+                />
+                <input
+                  type="email"
+                  className="rounded-md bg-zinc-100 my-2"
+                  placeholder="Whats your email?"
+                  required
+                />
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="4"
+                  className="rounded-md bg-zinc-100 my-2"
+                  placeholder="Your questions..."
+                ></textarea>
               </form>
-              <button type="submit" form="form" className="bg-yellow-500 mt-4 text-sm px-5 py-2 font-medium uppercase rounded-md hover:bg-zinc-100">Send message</button>
-
+              <button
+                type="submit"
+                form="form"
+                className="bg-pink-600 mt-4 text-sm px-5 py-2 font-medium uppercase rounded-md hover:bg-zinc-100"
+              >
+                Send message
+              </button>
             </div>
           </div>
         </section>
@@ -134,7 +161,14 @@ const ContactPage = () => {
         </section>
 
         <section className="mb-5 flex flex-col justify-center items-center gap-3">
-          <div className="bg-blue-300 rounded-md lg:w-1/3 lg:h-12 w-1/2 h-18 flex shadow-md">
+          <motion.div
+            initial={{
+              x: -60,
+              opacity: 0,
+            }}
+            whileInView={{ x: 0, opacity: 1 }}
+            className="bg-blue-300 rounded-md lg:w-1/3 lg:h-12 w-1/2 h-18 flex shadow-md"
+          >
             <HiPhone
               title="Our phone number"
               className="m-3 bg-blue-900 rounded-sm"
@@ -145,9 +179,16 @@ const ContactPage = () => {
               <span className="font-bold">Our phone:</span> <br />
               +046893985
             </p>
-          </div>
+          </motion.div>
 
-          <div className="bg-blue-300 rounded-md lg:w-1/3 lg:h-12 w-1/2 h-18 flex shadow-md">
+          <motion.div
+            initial={{
+              x: -60,
+              opacity: 0,
+            }}
+            whileInView={{ x: 0, opacity: 1 }}
+            className="bg-blue-300 rounded-md lg:w-1/3 lg:h-12 w-1/2 h-18 flex shadow-md"
+          >
             <HiHome
               title="Our location"
               className="m-3 bg-blue-900 rounded-sm"
@@ -158,9 +199,16 @@ const ContactPage = () => {
               <span className="font-bold">Our location:</span> <br /> Bucuresti,
               Romania
             </p>
-          </div>
+          </motion.div>
 
-          <div className="bg-blue-300 rounded-md lg:w-1/3 lg:h-12 w-1/2 h-18 flex shadow-md">
+          <motion.div
+            initial={{
+              x: -60,
+              opacity: 0,
+            }}
+            whileInView={{ x: 0, opacity: 1 }}
+            className="bg-blue-300 rounded-md lg:w-1/3 lg:h-12 w-1/2 h-18 flex shadow-md"
+          >
             <HiOutlineMail
               title="Our email"
               className="lg:m-3 mt-2 ml-3 bg-blue-900 rounded-sm inline-block"
@@ -171,7 +219,7 @@ const ContactPage = () => {
               <span className="font-bold">Our email address:</span> <br />
               sneakers@sneakers.ro
             </p>
-          </div>
+          </motion.div>
         </section>
       </Layout>
     </>

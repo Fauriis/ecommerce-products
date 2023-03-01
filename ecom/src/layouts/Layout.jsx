@@ -2,15 +2,15 @@ import { css } from "@emotion/css";
 import { Footer } from "../components/common";
 import { Header } from "../components/common/Header";
 
-const yellow = "#f8da33";
+const pink = "#cb1284";
 const white = "#fff";
-const blue = "#081231";
+const black = "#0e010c";
 
 export const Layout = ({ children }) => {
   const gridCss = css``;
 
   const headerCss = css`
-    background-color: ${yellow};
+    background-color: ${pink};
     color: ${white};
 
     padding: 6px 15px 6px 15px;
@@ -19,7 +19,7 @@ export const Layout = ({ children }) => {
   // const mainAreaCss = css``;
 
   const footerCss = css`
-    background-color: ${blue};
+    background-color: ${black};
     padding: 6px 15px 6px 15px;
   `;
 
