@@ -12,7 +12,7 @@ const ProductsNotFound = () => {
 
      
         <section className="my-5 mx-6 text-center lg:justify-center lg:items-center lg:flex lg:flex-col">
-          <div className="bg-yellow-100 lg:py-8 lg:h-80 lg:w-1/4 relative -z-10 rounded-md py-4 drop-shadow-xl">
+          <div className="bg-pink-100 lg:py-8 lg:h-80 lg:w-1/4 relative -z-10 rounded-md py-4 drop-shadow-xl">
             <AiOutlineDropbox
               size="50"
               color="navy"
@@ -26,7 +26,7 @@ const ProductsNotFound = () => {
 
           <button
             type="button"
-            className="uppercase font-bold drop-shadow-xl text-black bg-yellow-400 mt-4 px-5 py-2 rounded-md hover:bg-yellow-50"
+            className="uppercase font-bold drop-shadow-xl text-black bg-pink-500 mt-4 px-5 py-2 rounded-md hover:bg-pink-50"
           >
             <Link href="/">back home</Link>
           </button>
