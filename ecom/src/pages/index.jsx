@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Homepage</title>
+        <title>Homepagee</title>
       </Head>
 
       <Layout>
