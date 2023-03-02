@@ -61,7 +61,7 @@ export const Header = () => {
       </section>
 
       <nav
-        className={`absolute left-0 ${
+        className={`absolute right-0 ${
           menuOpen
             ? " top-0 transition-all duration-700 ease-in-out"
             : "-top-full transition-all duration-700 ease-in transform scale-y-50"

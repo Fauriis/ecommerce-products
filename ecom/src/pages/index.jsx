@@ -1,49 +1,32 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import { baseUrl } from "..";
-import { CartControl } from "../components/cart/CartControl";
-import { GridControls } from "../components/catalog/GridControls";
-import { ProductGrid } from "../components/catalog/ProductGrid";
+
 import { Layout } from "../layouts";
 
 const Home = () => {
-  const [perRow, setPerRow] = useState(4);
 
-  const [products, setProducts] = useState([])
-
-  useEffect(() => {
-    fetch(`${baseUrl}/products?limit=12`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((result) => {
-        setProducts(result);
-      });
-  }, []);
 
   return (
-    <>
-      <Head>
-        <title>Homepage</title>
-      </Head>
+   <>
 
-      <Layout>
-        <main className="container px-4 lg:px-4 mx-auto">
-          <header className="flex justify-start text-zinc-400">
-            <GridControls setPerRow={setPerRow}></GridControls>
+   <Head>
+    <title>Homepage</title>
+   </Head>
 
-            <CartControl></CartControl>
-          </header>
+   <Layout>
+    <main className="bg-red-200">
+     <div>
+      <h1>See the latest collection!</h1>
 
-          <section className="mt-16">
-            <ProductGrid
-              products={products}
-              perRow={perRow}
-            ></ProductGrid>
-          </section>
-        </main>
-      </Layout>
-    </>
+      <h3>A brand to remember!</h3>
+     </div>
+    </main>
+
+    <section className="bg-zinc-100">
+<h1>more to come</h1>
+<p>Are you ready?</p>
+    </section>
+   </Layout>
+   </>
   );
 };
 
