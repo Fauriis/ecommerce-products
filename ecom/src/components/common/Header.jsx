@@ -1,5 +1,5 @@
 import { BiMenu } from "react-icons/bi";
-import { GiRunningShoe } from "react-icons/gi";
+import { GiHighHeel } from "react-icons/gi";
 import Link from "next/link";
 import { useState } from "react";
 import { css } from "@emotion/css";
@@ -43,10 +43,10 @@ export const Header = () => {
           We love fashion
         </h1>
         <Link href="/" title="Home">
-          <GiRunningShoe
+          <GiHighHeel
             size={30}
             className="hover:text-black hover:animate-spin"
-          ></GiRunningShoe>
+          ></GiHighHeel>
         </Link>
 
         <button
