@@ -55,7 +55,7 @@ const Home = () => {
                 <br className="lg:block hidden" /> adipisci officiis esse
                 tenetur consequatur, laboriosam
                 <br className="lg:block hidden" /> voluptatem ex unde minus
-                perferendis.''
+                perferendis."
               </p>
 
               <p className="flex flex-row mt-4">
@@ -81,7 +81,7 @@ const Home = () => {
                 <br className="lg:block hidden" /> adipisci officiis esse
                 tenetur consequatur, laboriosam
                 <br className="lg:block hidden" /> voluptatem ex unde minus
-                perferendis.''
+                perferendis."
               </p>
 
               <p className="flex flex-row mt-4">
