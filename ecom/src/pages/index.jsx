@@ -59,9 +59,9 @@ const Home = () => {
               </p>
 
               <p className="flex flex-row mt-4">
-                {Array(totalStars, index)
+                {Array(totalStars)
                   .fill("_")
-                  .map((_) => {
+                  .map((_, index) => {
                     return <AiTwotoneStar size="20" key={index}/>;
                   })}
               </p>
@@ -85,9 +85,9 @@ const Home = () => {
               </p>
 
               <p className="flex flex-row mt-4">
-                {Array(totalStars, index)
+                {Array(totalStars)
                   .fill("_")
-                  .map((_) => {
+                  .map((_, index) => {
                     return <AiTwotoneStar size="20" key={index}/>;
                   })}
               </p>
