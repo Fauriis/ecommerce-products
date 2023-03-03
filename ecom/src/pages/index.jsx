@@ -59,11 +59,11 @@ const Home = () => {
               </p>
 
               <p className="flex flex-row mt-4">
-                {/* {Array(totalStars)
+                {Array(totalStars)
                   .fill("_")
                   .map((_) => {
                     return <AiTwotoneStar size="20" />;
-                  })} */}
+                  })}
               </p>
             </div>
 
@@ -85,11 +85,11 @@ const Home = () => {
               </p>
 
               <p className="flex flex-row mt-4">
-                {/* {Array(totalStars)
+                {Array(totalStars)
                   .fill("_")
                   .map((_) => {
                     return <AiTwotoneStar size="20" />;
-                  })} */}
+                  })}
               </p>
             </div>
           </div>
