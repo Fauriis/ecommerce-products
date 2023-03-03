@@ -48,12 +48,12 @@ const Home = () => {
 
             <div>
               <p className=" text-justify">
-                ,,Lorem ipsum, dolor sit amet consectetur{" "}
+                ,,Lorem ipsum, dolor sit amet consectetur
                 <br className="lg:block hidden" /> adipisicing elit. Dignissimos
-                velit aut labore omnis <br className="lg:block hidden" />{" "}
-                reprehenderit ratione corrupti vel saepe praesentium,{" "}
+                velit aut labore omnis <br className="lg:block hidden" />
+                reprehenderit ratione corrupti vel saepe praesentium,
                 <br className="lg:block hidden" /> adipisci officiis esse
-                tenetur consequatur, laboriosam{" "}
+                tenetur consequatur, laboriosam
                 <br className="lg:block hidden" /> voluptatem ex unde minus
                 perferendis.''
               </p>
@@ -74,12 +74,12 @@ const Home = () => {
 
             <div>
               <p className="mt-4 lg:mt-0 text-justify">
-                ,,Lorem ipsum, dolor sit amet consectetur{" "}
+                ,,Lorem ipsum, dolor sit amet consectetur
                 <br className="lg:block hidden" /> adipisicing elit. Dignissimos
-                velit aut labore omnis <br className="lg:block hidden" />{" "}
-                reprehenderit ratione corrupti vel saepe praesentium,{" "}
+                velit aut labore omnis <br className="lg:block hidden" />
+                reprehenderit ratione corrupti vel saepe praesentium,
                 <br className="lg:block hidden" /> adipisci officiis esse
-                tenetur consequatur, laboriosam{" "}
+                tenetur consequatur, laboriosam
                 <br className="lg:block hidden" /> voluptatem ex unde minus
                 perferendis.''
               </p>
