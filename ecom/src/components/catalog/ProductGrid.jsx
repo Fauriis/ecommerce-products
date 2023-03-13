@@ -23,6 +23,10 @@ export const ProductGrid = ({ products = [], perRow = 4 }) => {
     <ul className={gridCss}>
       {products.map((product, index) => {
         const { title, price, image } = product;
+        const formattedPrice = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+        }).format(price)
 
         return (
           <li key={index}>
@@ -51,7 +55,7 @@ export const ProductGrid = ({ products = [], perRow = 4 }) => {
                   {title}
                 </h1>
 
-                <div className="text-zinc-500 font-light mb-2">{price}</div>
+                <div className="text-zinc-500 font-light mb-2">{formattedPrice}</div>
               </section>
             </article>
           </li>

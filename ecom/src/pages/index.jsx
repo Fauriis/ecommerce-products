@@ -210,9 +210,7 @@ const Home = () => {
             </form>
           </div>
 
-          <div className="flex justify-end items-center relative bottom-24 right-12">
-     
-          </div>
+      
         </section>
       </Layout>
     </>
