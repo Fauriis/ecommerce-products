@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const options = ["1", "2", "4"];
 
 export const GridControls = ({ setPerRow = () => {} }) => {
-  const [itemsPerRow, setItemsPerRow] = useState(options[0]);
+  const [itemsPerRow, setItemsPerRow] = useState(options[2]);
 
   useEffect(() => {
     const perRow = parseInt(itemsPerRow);

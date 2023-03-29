@@ -11,8 +11,17 @@ const Products = () => {
 
   const [products, setProducts] = useState([]);
 
+  const [pagination, setPagination] = useState({
+    perPage: 12,
+    page: 1,
+    total: 20,
+  });
+
+  const { perPage, page, total } = pagination;
+  const pagesCount = Math.ceil(total / perPage);
+
   useEffect(() => {
-    fetch(`${baseUrl}/products?limit=12`)
+    fetch(`${baseUrl}/products?limit=${perPage}`)
       .then((response) => {
         return response.json();
       })
@@ -37,6 +46,34 @@ const Products = () => {
 
           <section className="mt-16">
             <ProductGrid products={products} perRow={perRow}></ProductGrid>
+          </section>
+
+          <section>
+            <ul className="flex gap-2">
+              {Array(pagesCount)
+                .fill("_")
+                .map((_, index) => {
+                  const i = index + 1;
+                  return (
+                    <li
+                    key={index}
+                      className={`${i === page ? "font-bold" : ""}`}
+                      onClick={() => {
+                        if (i === page) {
+                          return;
+                        }
+
+                        setPagination({
+                          ...pagination,
+                          page: i,
+                        })
+                      }}
+                    >
+                      {i}
+                    </li>
+                  );
+                })}
+            </ul>
           </section>
         </main>
       </Layout>
