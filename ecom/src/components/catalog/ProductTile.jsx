@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export const ProductTile = ({ product }) => {
   const { title, price, image, id } = product;
@@ -27,6 +28,10 @@ export const ProductTile = ({ product }) => {
               src={image}
               title={title}
               className="h-full inline cursor-pointer"
+              alt={`Image for ${title}`}
+              style={{ objectFit: 'contain' }}
+              width={200}
+              height={200}
             ></motion.img>
           </Link>
         </div>

@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { baseUrl } from "../..";
 import { CartControl } from "../../components/cart/CartControl";
+import { CgSpinner } from "react-icons/cg";
 
 const ProductPage = () => {
   const router = useRouter();
@@ -23,9 +24,14 @@ const ProductPage = () => {
         setProduct(result);
       });
   }, [pid]);
+  // aici chemam produsul
 
   if (product === null) {
-    return <></>;
+    return (
+      <div className="text-center flex h-screen w-screen justify-center items-center">
+        <CgSpinner size={48} className="animate-spin"></CgSpinner>
+      </div>
+    );
   }
 
   const { id, title, description, price, image } = product;
@@ -52,7 +58,7 @@ const ProductPage = () => {
             <img
               src={image}
               alt={`Image of ${image}`}
-              className="block w-full "
+              className="block w-full"
             />
           </div>
 
@@ -61,14 +67,15 @@ const ProductPage = () => {
             <p className="mt-12">{description}</p>
 
             <div className="mt-12">
-              <span className="text-3xl leading-9 font-bold">{formattedPrice}</span>
+              <span className="text-3xl leading-9 font-bold">
+                {formattedPrice}
+              </span>
             </div>
 
             <div className="mt-12">
               <button
-              className="bg-black text-white uppercase font-bolde text-sm py-3 px-6 hover:bg-pink-500 transition-colors duration-300"
+                className="bg-black text-white uppercase font-bolde text-sm py-3 px-6 hover:bg-pink-500 transition-colors duration-300"
                 title={`Add ${title} to cart`}
-
                 type="button"
                 onClick={() => {
                   alert(id);

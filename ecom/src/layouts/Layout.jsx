@@ -1,6 +1,7 @@
 import { css } from "@emotion/css";
 import { Footer } from "../components/common";
 import { Header } from "../components/common/Header";
+import Products from "../pages/products";
 
 const pink = "#cb1284";
 const white = "#fff";
@@ -16,7 +17,13 @@ export const Layout = ({ children }) => {
     padding: 6px 15px 6px 15px;
   `;
 
-  // const mainAreaCss = css``;
+  // const mainAreaCss = css`
+  // grid-area: main-area;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  // min-height: 100vh;
+  // `;
 
   const footerCss = css`
     background-color: ${black};
@@ -31,6 +38,7 @@ export const Layout = ({ children }) => {
 
       <div>
         {children}
+      
         <footer className={footerCss}>
           <Footer></Footer>
         </footer>

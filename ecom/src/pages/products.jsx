@@ -4,7 +4,7 @@ import { CartControl } from "../components/cart/CartControl";
 import { Pagination } from "../components/catalog";
 import { GridControls } from "../components/catalog/GridControls";
 import { ProductGrid } from "../components/catalog/ProductGrid";
-import { useProducts } from "../hooks";
+import { useCart, useProducts } from "../hooks";
 import { Layout } from "../layouts";
 
 const Products = () => {
@@ -13,6 +13,8 @@ const Products = () => {
 
   const [paginatedProducts, setPaginatedProducts] = useState([]);
   // folosim niste valori default []
+
+  const cart = useCart(2)
 
   return (
     <>
@@ -25,7 +27,7 @@ const Products = () => {
           <header className="flex justify-start text-zinc-400">
             <GridControls setPerRow={setPerRow}></GridControls>
 
-            <CartControl></CartControl>
+            <CartControl cart={cart}></CartControl>
           </header>
 
           <section className="mt-16">
