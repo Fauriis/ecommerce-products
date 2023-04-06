@@ -1,36 +1,60 @@
 import Head from "next/head";
 import { Layout } from "../../layouts";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { baseUrl } from "../..";
 import { CartControl } from "../../components/cart/CartControl";
 import { CgSpinner } from "react-icons/cg";
+import { useProduct } from "../../hooks";
+import Link from "next/link";
 
 const ProductPage = () => {
   const router = useRouter();
   const { pid } = router.query;
-  const [product, setProduct] = useState(null);
+  const { product, status } = useProduct(pid);
 
-  useEffect(() => {
-    if (pid === undefined) {
-      return;
-    }
+  // MUTAT in useProduct.js
+  // useEffect(() => {
+  //   if (pid === undefined) {
+  //     return;
+  //   }
 
-    fetch(`${baseUrl}/products/${pid}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((result) => {
-        setProduct(result);
-      });
-  }, [pid]);
+  //   fetch(`${baseUrl}/products/${pid}`)
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((result) => {
+  //       setProduct(result);
+  //     });
+  // }, [pid]);
   // aici chemam produsul
 
-  if (product === null) {
+  if (product === null && status !== "404") {
     return (
       <div className="text-center flex h-screen w-screen justify-center items-center">
         <CgSpinner size={48} className="animate-spin"></CgSpinner>
       </div>
+    );
+  }
+
+  if (status === "404") {
+    return (
+      <Layout>
+      <section className="my-5 mx-6 text-center lg:justify-center lg:items-center lg:flex lg:flex-col">
+        <div className="bg-pink-100 lg:py-8 lg:h-80 lg:w-1/4 relative -z-10 rounded-md py-4 drop-shadow-xl">
+          
+          <p className="my-2 leading-loose lg:mt-24 text-black font-semibold">
+            404 | Product not found
+
+          </p>
+        </div>
+
+        <button
+          type="button"
+          className="uppercase font-bold drop-shadow-xl text-black bg-pink-500 mt-4 px-5 py-2 rounded-md hover:bg-pink-50"
+        >
+          <Link href="/">back home</Link>
+        </button>
+      </section>
+      </Layout>
     );
   }
 
@@ -58,7 +82,9 @@ const ProductPage = () => {
             <img
               src={image}
               alt={`Image of ${image}`}
-              className="block w-full"
+              className="inline"
+              width={400}
+              height={400}
             />
           </div>
 
