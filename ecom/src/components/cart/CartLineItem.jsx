@@ -24,7 +24,7 @@ export const CartLineItem = ({ product }) => {
       <td>
         <Link href={`/products/${id}`}>
           <Image
-         
+         alt={title}
             title={title}
             src={image}
             height="100"

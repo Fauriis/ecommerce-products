@@ -13,7 +13,7 @@ export const Pagination = ({products, setPaginatedProducts}) =>{
       ...pagination,
       total: products.length,
     });
-  }, [products]);
+  }, [products, setPagination]);
 
   useEffect(() => {
     const { total, page, perPage } = pagination;
@@ -27,7 +27,7 @@ export const Pagination = ({products, setPaginatedProducts}) =>{
     // lui splice ii spunem de unde sa plece pana unde, in paranteze
 
     setPaginatedProducts(newProducts)
-  }, [pagination]);
+  }, [pagination, setPaginatedProducts]);
 
   // de fiecare data cand se schimba paginatia [pagination] ruleaza ce este in useEffectul de sus
 

@@ -14,7 +14,7 @@ export const useCart = (cartId = 2) => {
         setCart(result);
        
       });
-  }, []);
+  }, [setCart]);
 
   return cart;
 };

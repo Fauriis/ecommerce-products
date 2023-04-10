@@ -32,7 +32,7 @@ export const useProduct = (pid) => {
          setStatus('404')
         });
     }
-  }, [pid]);
+  }, [pid, setProduct, setStatus]);
 
   return { status, product };
 };

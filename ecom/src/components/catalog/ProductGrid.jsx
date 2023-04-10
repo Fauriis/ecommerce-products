@@ -1,11 +1,13 @@
 import { css } from "@emotion/css";
 import React from "react";
-import ProductsNotFound from "../../pages/noproducts";
+import {CgSpinner} from 'react-icons/cg'
 import { ProductTile } from "./ProductTile";
 
 export const ProductGrid = ({ products = [], perRow = 4 }) => {
   if (products.length <= 0) {
-    return <ProductsNotFound></ProductsNotFound>;
+    return  <div className="text-center flex h-screen w-screen justify-center items-center">
+    <CgSpinner size={48} className="animate-spin"></CgSpinner>
+  </div>;
   }
 
   const gridCss = css`

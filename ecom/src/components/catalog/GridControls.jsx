@@ -9,7 +9,8 @@ export const GridControls = ({ setPerRow = () => {} }) => {
     const perRow = parseInt(itemsPerRow);
 
     setPerRow(perRow);
-  }, [itemsPerRow]);
+  }, [itemsPerRow, setPerRow]);
+  // cand se schimba itemsPerRow se schimba parseInt
 
   return (
     <>
