@@ -38,4 +38,4 @@ export const useProduct = (pid) => {
 };
 
 // productCache = produsul din memorie
-//
+// aici chemam produs, toata procedura asta din fila de aici

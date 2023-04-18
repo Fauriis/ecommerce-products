@@ -24,7 +24,7 @@ const Products = () => {
 
       <Layout>
         <main className="container px-4 lg:px-4 mx-auto">
-          <header className="flex justify-start text-zinc-400">
+          <header className="flex justify-between items-center text-zinc-400">
             <GridControls setPerRow={setPerRow}></GridControls>
 
             <CartControl cart={cart}></CartControl>

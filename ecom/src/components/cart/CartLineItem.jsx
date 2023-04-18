@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useProduct } from "../../hooks";
 import Image from "next/image";
+import { CgSpinner } from "react-icons/cg";
+
 
 export const CartLineItem = ({ product }) => {
   const { quantity, productId } = product;
@@ -9,8 +11,10 @@ export const CartLineItem = ({ product }) => {
   // atunci cand cartItem nu va fi egal cu null, consideram ca este incarcat
 
   if (!isLoaded) {
-    return <></>;
-    // spinner
+    return  <div className="text-center flex h-screen w-screen justify-center items-center">
+    <CgSpinner size={48} className="animate-spin"></CgSpinner>
+    Please wait...
+  </div>;
   }
 
   const { image, price, id, title } = cartItem;

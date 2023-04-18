@@ -1,20 +1,26 @@
 import { useContext } from "react";
 import { AppContext } from "../../pages/_app";
 import { CartLineItem } from "./CartLineItem";
+import { CgSpinner } from "react-icons/cg";
+
 
 export const CartItems = () => {
   const { cart } = useContext(AppContext);
 
   if (cart === null) {
-    return <></>;
-    // pune spinner
+    return  <div className="text-center flex h-screen w-screen justify-center items-center">
+    <CgSpinner size={48} className="animate-spin"></CgSpinner>
+    Please wait...
+  </div>;
   }
 
   const { products } = cart;
 
   if (products.length <= 0) {
-    return <></>;
-    // pune spinner (poate fi si o componenta spinner)
+    return  <div className="text-center flex h-screen w-screen justify-center items-center">
+    <CgSpinner size={48} className="animate-spin"></CgSpinner>
+    Please wait...
+  </div>;
   }
 
   return (

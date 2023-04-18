@@ -5,32 +5,18 @@ import { CartControl } from "../../components/cart/CartControl";
 import { CgSpinner } from "react-icons/cg";
 import { useProduct } from "../../hooks";
 import Link from "next/link";
+import { BackToShop } from "../../components/common/BackToShop";
 
 const ProductPage = () => {
   const router = useRouter();
   const { pid } = router.query;
   const { product, status } = useProduct(pid);
 
-  // MUTAT in useProduct.js
-  // useEffect(() => {
-  //   if (pid === undefined) {
-  //     return;
-  //   }
-
-  //   fetch(`${baseUrl}/products/${pid}`)
-  //     .then((response) => {
-  //       return response.json();
-  //     })
-  //     .then((result) => {
-  //       setProduct(result);
-  //     });
-  // }, [pid]);
-  // aici chemam produsul
-
   if (product === null && status !== "404") {
     return (
       <div className="text-center flex h-screen w-screen justify-center items-center">
         <CgSpinner size={48} className="animate-spin"></CgSpinner>
+        Please wait...
       </div>
     );
   }
@@ -38,22 +24,20 @@ const ProductPage = () => {
   if (status === "404") {
     return (
       <Layout>
-      <section className="my-5 mx-6 text-center lg:justify-center lg:items-center lg:flex lg:flex-col">
-        <div className="bg-pink-100 lg:py-8 lg:h-80 lg:w-1/4 relative -z-10 rounded-md py-4 drop-shadow-xl">
-          
-          <p className="my-2 leading-loose lg:mt-24 text-black font-semibold">
-            404 | Product not found
+        <section className="my-5 mx-6 text-center lg:justify-center lg:items-center lg:flex lg:flex-col">
+          <div className="bg-pink-100 lg:py-8 lg:h-80 lg:w-1/4 relative -z-10 rounded-md py-4 drop-shadow-xl">
+            <p className="my-2 leading-loose lg:mt-24 text-black font-semibold">
+              404 | Product not found
+            </p>
+          </div>
 
-          </p>
-        </div>
-
-        <button
-          type="button"
-          className="uppercase font-bold drop-shadow-xl text-black bg-pink-500 mt-4 px-5 py-2 rounded-md hover:bg-pink-50"
-        >
-          <Link href="/">back home</Link>
-        </button>
-      </section>
+          <button
+            type="button"
+            className="uppercase font-bold drop-shadow-xl text-black bg-pink-500 mt-4 px-5 py-2 rounded-md hover:bg-pink-50"
+          >
+            <Link href="/">back home</Link>
+          </button>
+        </section>
       </Layout>
     );
   }
@@ -71,8 +55,8 @@ const ProductPage = () => {
       </Head>
 
       <Layout>
-        <header className="container px-4 lg:px-0 mx-auto flex justify-between">
-          <div>Back to shop</div>
+        <header className="container px-4 lg:px-0 mt-2 flex justify-evenly items-start">
+          <BackToShop></BackToShop>
 
           <CartControl></CartControl>
         </header>
@@ -100,7 +84,7 @@ const ProductPage = () => {
 
             <div className="mt-12">
               <button
-                className="bg-black text-white uppercase font-bolde text-sm py-3 px-6 hover:bg-pink-500 transition-colors duration-300"
+                className="bg-black text-white uppercase text-sm py-3 px-6 hover:bg-pink-500 transition-colors duration-300"
                 title={`Add ${title} to cart`}
                 type="button"
                 onClick={() => {
