@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { useProduct } from "../../hooks";
+import { CgSpinner } from "react-icons/cg";
+import Link from "next/link";
 
 
 export const WishLineItem = ({ product }) => {

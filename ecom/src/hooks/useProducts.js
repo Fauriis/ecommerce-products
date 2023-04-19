@@ -15,6 +15,6 @@ export const useProducts = (limit = 20) => {
       });
   }, [setProducts]);
   // [] se intampla o data in momentul in care componenta este executata prima oara
-  return [products];
+  return [products, limit];
   //   scot un array de produse
 };

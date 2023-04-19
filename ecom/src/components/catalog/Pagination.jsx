@@ -29,7 +29,7 @@ export const Pagination = ({products, setPaginatedProducts}) =>{
     // lui splice ii spunem de unde sa plece pana unde, in paranteze
 
     setPaginatedProducts(newProducts)
-  }, [pagination, setPaginatedProducts]);
+  }, [pagination, setPaginatedProducts, products]);
 
   // de fiecare data cand se schimba paginatia [pagination] ruleaza ce este in useEffectul de sus
 
