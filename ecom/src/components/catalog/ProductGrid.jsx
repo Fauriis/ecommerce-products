@@ -4,10 +4,8 @@ import { CgSpinner } from "react-icons/cg";
 import { ProductTile } from "./ProductTile";
 import { useProduct } from "../../hooks";
 import { useRouter } from "next/router";
-
-import {MdAddShoppingCart} from 'react-icons/md'
-import { BsBookmarkHeartFill } from "react-icons/bs";
-
+import { AddToCart } from "./AddToCart";
+import { AddToWishlist } from "./AddToWishlist";
 
 export const ProductGrid = ({ products = [], perRow = 4 }) => {
   const router = useRouter();
@@ -42,25 +40,9 @@ export const ProductGrid = ({ products = [], perRow = 4 }) => {
           <li key={index}>
             <ProductTile product={product}></ProductTile>
             <div className="my-6 flex justify-center gap-2">
-              <button
-                className="bg-pink-500 text-black text-sm p-3 rounded-md  hover:bg-white transition-colors duration-300"
-                title={`Add ${title} to cart`}
-                type="button"
-                onClick={() => {
-                  alert(id);
-                }}
-              >
-               <MdAddShoppingCart size={20}></MdAddShoppingCart>
-              </button>
+              <AddToCart product={product}></AddToCart>
 
-              <button className="bg-pink-500 text-black text-sm p-3 rounded-md  hover:bg-white transition-colors duration-300"
-                title={`Add ${title} to wishlist`}
-                type="button"
-                onClick={() => {
-                  alert(id);
-                }}>
-                <BsBookmarkHeartFill size={20}></BsBookmarkHeartFill>
-              </button>
+              <AddToWishlist product={product}></AddToWishlist>
             </div>
           </li>
         );

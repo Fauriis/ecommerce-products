@@ -99,6 +99,12 @@ export const Header = () => {
               Cart
             </Link>
           </li>
+
+          <li className={`${underline} transition-colors duration-500 hover:text-black`}>
+            <Link href="/wishlist" title="Wishlist">
+              Wishlist
+            </Link>
+          </li>
         </ul>
       </nav>
     </>

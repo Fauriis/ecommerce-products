@@ -6,6 +6,9 @@ import { CgSpinner } from "react-icons/cg";
 import { useProduct } from "../../hooks";
 import Link from "next/link";
 import { BackToShop } from "../../components/common/BackToShop";
+import { AddToCart } from "../../components/catalog/AddToCart";
+import { AddToWishlist } from "../../components/catalog";
+import { WishControl } from "../../components/common";
 
 const ProductPage = () => {
   const router = useRouter();
@@ -59,6 +62,8 @@ const ProductPage = () => {
           <BackToShop></BackToShop>
 
           <CartControl></CartControl>
+
+          <WishControl></WishControl>
         </header>
 
         <section className="mt-16 container px-4 lg:px-0 mx-auto grid lg:gap-8 lg:grid-cols-12">
@@ -83,16 +88,8 @@ const ProductPage = () => {
             </div>
 
             <div className="mt-12">
-              <button
-                className="bg-black text-white uppercase text-sm py-3 px-6 hover:bg-pink-500 transition-colors duration-300"
-                title={`Add ${title} to cart`}
-                type="button"
-                onClick={() => {
-                  alert(id);
-                }}
-              >
-                Add to cart
-              </button>
+             <AddToCart product={product}></AddToCart>
+             <AddToWishlist product={product}></AddToWishlist>
             </div>
           </header>
         </section>

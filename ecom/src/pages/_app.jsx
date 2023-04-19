@@ -1,22 +1,16 @@
 import { createContext } from "react";
 import "./../styles/index.css";
 import { useCart } from "../hooks/useCart";
+import { useWishlist } from "../hooks/useWishlist";
 
 export const AppContext = createContext();
 
-// const initialValue = {
-//   cart: {
-//     qty: 112,
-//   },
-// };
-
-// mai sus este o functie
-
 function MyApp({ Component, pageProps }) {
-const cart = useCart()
+const {cart, setCart, addProduct} = useCart()
+const {wish, setWish} = useWishlist()
 
   return (
-    <AppContext.Provider value={{cart}}>
+    <AppContext.Provider value={{cart, setCart, addProduct, wish, setWish}}>
       <Component {...pageProps} />
     </AppContext.Provider>
   );

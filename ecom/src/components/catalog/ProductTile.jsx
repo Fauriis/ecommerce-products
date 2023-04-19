@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { AddToCart } from "./AddToCart";
+import { AddToWishlist } from "./AddToWishlist";
+// import { MdAddShoppingCart } from "react-icons/md";
 
 export const ProductTile = ({ product }) => {
   const { title, price, image, id } = product;
@@ -29,7 +32,7 @@ export const ProductTile = ({ product }) => {
               title={title}
               className="h-full inline cursor-pointer"
               alt={`Image for ${title}`}
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: "contain" }}
               width={200}
               height={200}
             ></motion.img>
@@ -41,6 +44,7 @@ export const ProductTile = ({ product }) => {
         <h1 className="uppercase text-zinc-400 mb-4 font-medium">{title}</h1>
 
         <div className="text-zinc-500 font-light mb-2">{formattedPrice}</div>
+
       </section>
     </article>
   );

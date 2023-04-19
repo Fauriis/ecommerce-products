@@ -1,13 +1,12 @@
-import Link from "next/link";
-import { useProduct } from "../../hooks";
+import React from "react";
 import Image from "next/image";
-import { CgSpinner } from "react-icons/cg";
+import { useProduct } from "../../hooks";
 
-export const CartLineItem = ({ product }) => {
+
+export const WishLineItem = ({ product }) => {
   const { quantity, productId } = product;
-  const { product: cartItem } = useProduct(productId);
-  const isLoaded = cartItem !== null;
-  // atunci cand cartItem nu va fi egal cu null, consideram ca este incarcat
+  const {product: wishItem} = useProduct(productId);
+  const isLoaded = wishItem !== null;
 
   if (!isLoaded) {
     return (
@@ -18,11 +17,13 @@ export const CartLineItem = ({ product }) => {
     );
   }
 
-  const { image, price, id, title } = cartItem;
   const formattedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   }).format(price * quantity);
+  const { image, price, id, title } = wishItem;
+  console.log(wishItem);
+
 
   return (
     <tr>

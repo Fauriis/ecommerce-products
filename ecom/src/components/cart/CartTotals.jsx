@@ -1,24 +1,26 @@
-import { useContext } from "react"
-import { AppContext } from "../../pages/_app"
+import { useContext } from "react";
+import { AppContext } from "../../pages/_app";
 
 export const CartTotals = () => {
-const {cart} = useContext(AppContext)
+  const { cart } = useContext(AppContext);
 
-  return <>
-  <header>
-    <h1>Cart Totals</h1>
-  </header>
+  return (
+    <>
+      <header>
+        <h1>Cart Totals</h1>
+      </header>
 
-  <section>
-<ul>
-  <li>
-    Total: 
-  </li>
-</ul>
-  </section>
-  
-  <footer>
+      <section>
+        <ul>
+          <li>Total:</li>
+        </ul>
+      </section>
 
-  </footer>
-  </>
-}
+      <footer>
+        <button type="button" title="Place Order" onClick={() =>{
+          
+        }}>Place Order</button>
+      </footer>
+    </>
+  );
+};

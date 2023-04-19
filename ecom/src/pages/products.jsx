@@ -4,8 +4,9 @@ import { CartControl } from "../components/cart/CartControl";
 import { Pagination } from "../components/catalog";
 import { GridControls } from "../components/catalog/GridControls";
 import { ProductGrid } from "../components/catalog/ProductGrid";
-import { useCart, useProducts } from "../hooks";
+import { useCart, useProducts, useWishlist } from "../hooks";
 import { Layout } from "../layouts";
+import { WishControl } from "../components/common";
 
 const Products = () => {
   const [perRow, setPerRow] = useState(4);
@@ -15,6 +16,7 @@ const Products = () => {
   // folosim niste valori default []
 
   const cart = useCart(2)
+  const wish = useWishlist(2)
 
   return (
     <>
@@ -28,6 +30,7 @@ const Products = () => {
             <GridControls setPerRow={setPerRow}></GridControls>
 
             <CartControl cart={cart}></CartControl>
+            <WishControl wish={wish}></WishControl>
           </header>
 
           <section className="mt-16">
