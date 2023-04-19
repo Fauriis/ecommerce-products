@@ -13,8 +13,8 @@ export const useProducts = (limit = 20) => {
       .then((result) => {
         setProducts(result);
       });
-  }, [setProducts]);
+  }, [setProducts, limit]);
   // [] se intampla o data in momentul in care componenta este executata prima oara
-  return [products, limit];
+  return [products];
   //   scot un array de produse
 };
