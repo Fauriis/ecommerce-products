@@ -6,11 +6,11 @@ import { useWishlist } from "../hooks/useWishlist";
 export const AppContext = createContext();
 
 function MyApp({ Component, pageProps }) {
-const {cart, setCart, addProduct} = useCart()
+const {cart, setCart, alterProduct} = useCart()
 const {wish, setWish} = useWishlist()
 
   return (
-    <AppContext.Provider value={{cart, setCart, addProduct, wish, setWish}}>
+    <AppContext.Provider value={{cart, setCart, alterProduct, wish, setWish}}>
       <Component {...pageProps} />
     </AppContext.Provider>
   );

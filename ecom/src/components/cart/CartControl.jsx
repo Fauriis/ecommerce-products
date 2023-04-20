@@ -30,7 +30,7 @@ return cartQty;
       <ul>
         <li className="flex justify-center items-center ">
           <Link href="/cart">
-            <AiOutlineShoppingCart size={30}></AiOutlineShoppingCart>
+            <AiOutlineShoppingCart size={30} className="hover:text-black" title="Your products here"></AiOutlineShoppingCart>
             {cartQty}
           </Link>
         </li>

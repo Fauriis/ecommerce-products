@@ -1,13 +1,19 @@
 import Link from "next/link";
-import { useProduct } from "../../hooks";
+import {  useProduct } from "../../hooks";
 import Image from "next/image";
 import { CgSpinner } from "react-icons/cg";
+import { useContext } from "react";
+import { AppContext } from "../../pages/_app";
 
 export const CartLineItem = ({ product }) => {
   const { quantity, productId } = product;
   const { product: cartItem } = useProduct(productId);
   const isLoaded = cartItem !== null;
   // atunci cand cartItem nu va fi egal cu null, consideram ca este incarcat
+
+  const {alterProduct} = useContext(AppContext);
+
+ 
 
   if (!isLoaded) {
     return (
@@ -43,7 +49,21 @@ export const CartLineItem = ({ product }) => {
         </Link>
       </td>
       <td></td>
-      <td>{quantity}</td>
+      <td>
+        <div className="border">
+          <button type="button" title="Decrease" className="p-4" onClick={() =>{
+           alterProduct(id, -1)
+          }}>
+            -
+          </button>
+          {quantity}
+          <button type="button" title="Increase" className="p-4" onClick={() =>{
+            alterProduct(id, 1)
+          }}>
+            +
+          </button>
+        </div>
+      </td>
       <td>{formattedPrice}</td>
     </tr>
   );

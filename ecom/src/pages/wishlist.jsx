@@ -19,7 +19,7 @@ const Wishlist = () => {
           </header>
 
           <div>
-            {/* <WishItems></WishItems> */}
+            <WishItems></WishItems>
           </div>
         </main>
       </Layout>

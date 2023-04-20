@@ -6,7 +6,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 
 
 export const AddToCart = ({ product }) => {
-  const { cart, addProduct } = useContext(AppContext);
+  const { cart, alterProduct } = useContext(AppContext);
 
   if (cart === null) {
     return;
@@ -29,7 +29,7 @@ export const AddToCart = ({ product }) => {
         return response.json();
       })
       .then((_) => {
-      addProduct(productId)
+      alterProduct(productId)
       });
   };
 

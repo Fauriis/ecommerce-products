@@ -31,7 +31,7 @@ export const WishControl = () => {
       <ul>
         <li className="flex justify-center items-center">
           <Link href="/wishlist">
-            <BsFillSuitHeartFill size={30}></BsFillSuitHeartFill>
+            <BsFillSuitHeartFill size={30} className="hover:text-red-500" title="Wishlist"></BsFillSuitHeartFill>
             {wishQty}
           </Link>
         </li>

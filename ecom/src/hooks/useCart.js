@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { baseUrl } from "..";
 
-const alterCart = (cart, productId) => {
+const alterCart = (cart, productId, quantity) => {
   const { products } = cart;
 
   const product = products.find((product) => {
@@ -12,10 +12,18 @@ const alterCart = (cart, productId) => {
   if (product === undefined) {
     products.push({
       productId,
-      quantity: 1,
+      quantity,
     });
   } else {
-    product.quantity += 1;
+    if (product.quantity + quantity <= 0) {
+      // cart.products = [...cart.products].splice(index, 1);
+      // o copie simpla de array
+      cart.products = cart.products.filter((product) => {
+        return product.productId !== productId;
+      });
+    } else {
+      product.quantity += quantity;
+    }
   }
 
   return cart;
@@ -34,10 +42,12 @@ export const useCart = (cartId = 2) => {
       });
   }, [setCart, cartId]);
 
-  const addProduct = (productId) =>{
-   const newCart = alterCart(cart, productId)
-  setCart({...newCart})
-  }
+  const alterProduct = (productId, quantity = 1) => {
+    const newCart = alterCart(cart, productId, quantity);
+    setCart({ ...newCart });
+  };
 
-  return { cart, setCart, addProduct };
+  // alterProduct primeste un productId si cantitatea pe care o alteram/care variaza
+
+  return { cart, setCart, alterProduct };
 };

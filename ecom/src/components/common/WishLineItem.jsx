@@ -19,12 +19,12 @@ export const WishLineItem = ({ product }) => {
     );
   }
 
+  const { image, price, id, title } = wishItem;
+
   const formattedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   }).format(price * quantity);
-  const { image, price, id, title } = wishItem;
-  console.log(wishItem);
 
 
   return (

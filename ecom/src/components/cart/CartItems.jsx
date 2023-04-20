@@ -17,9 +17,9 @@ export const CartItems = () => {
   const { products } = cart;
 
   if (products.length <= 0) {
-    return  <div className="text-center flex h-screen w-screen justify-center items-center">
+    return  <div className="text-center flex h-screen justify-center items-center">
     <CgSpinner size={48} className="animate-spin"></CgSpinner>
-    Please wait...
+    Ops! No products here, yet! 
   </div>;
   }
 
