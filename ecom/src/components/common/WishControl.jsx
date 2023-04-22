@@ -28,14 +28,22 @@ export const WishControl = () => {
 
   return (
     <>
-      <ul>
-        <li className="flex justify-center items-center">
+      <main className="flex flex-col text-center justify-center items-center text-black ">
+        <div className="mt-10">
           <Link href="/wishlist">
-            <BsFillSuitHeartFill size={30} className="hover:text-red-500" title="Wishlist"></BsFillSuitHeartFill>
-            {wishQty}
+            <BsFillSuitHeartFill
+              size={30}
+              className="hover:text-red-500"
+              title="Wishlist"
+            ></BsFillSuitHeartFill>
           </Link>
-        </li>
-      </ul>
+        </div>
+        <div className=" ">
+          <h1 className="uppercase font-bold text-xl mt-2">My wishlist</h1>
+        </div>
+
+        <div className="">{wishQty} products</div>
+      </main>
     </>
   );
 };

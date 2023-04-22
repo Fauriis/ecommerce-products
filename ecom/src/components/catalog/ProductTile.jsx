@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { AddToCart } from "./AddToCart";
-import { AddToWishlist } from "./AddToWishlist";
 // import { MdAddShoppingCart } from "react-icons/md";
 
 export const ProductTile = ({ product }) => {

@@ -90,7 +90,9 @@ export const Header = () => {
               Products
             </Link>
           </li>
+        </ul>
 
+        <ul className="flex justify-center gap-6 mt-2 font-thin text-xl lg:uppercase">
           <li
             className={`${underline} transition-colors duration-500 hover:text-black`}
           >
@@ -100,7 +102,9 @@ export const Header = () => {
             </Link>
           </li>
 
-          <li className={`${underline} transition-colors duration-500 hover:text-black`}>
+          <li
+            className={`${underline} transition-colors duration-500 hover:text-black`}
+          >
             <Link href="/wishlist" title="Wishlist">
               Wishlist
             </Link>

@@ -19,6 +19,7 @@ const alterCart = (cart, productId, quantity) => {
       // cart.products = [...cart.products].splice(index, 1);
       // o copie simpla de array
       cart.products = cart.products.filter((product) => {
+        // filter ne da o bucata din arrayul respectiv
         return product.productId !== productId;
       });
     } else {

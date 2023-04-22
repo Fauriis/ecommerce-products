@@ -14,9 +14,9 @@ const Wishlist = () => {
 
       <Layout>
         <main className="container px-4 mx-auto">
-          <header className="flex justify-between text-zinc-400">
+          <div>
             <WishControl wish={wish}></WishControl>
-          </header>
+          </div>
 
           <div>
             <WishItems></WishItems>

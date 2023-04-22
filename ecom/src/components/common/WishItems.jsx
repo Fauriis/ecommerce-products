@@ -18,9 +18,9 @@ export const WishItems = () => {
 
   
   if (products.length <= 0) {
-    return  <div className="text-center flex h-screen w-screen justify-center items-center">
+    return  <div className="text-center flex justify-center items-center flex-col my-28">
     <CgSpinner size={48} className="animate-spin"></CgSpinner>
-    Please wait...
+    No products here, yet...
   </div>;
   }
 

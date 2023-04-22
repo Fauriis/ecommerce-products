@@ -7,10 +7,10 @@ export const AppContext = createContext();
 
 function MyApp({ Component, pageProps }) {
 const {cart, setCart, alterProduct} = useCart()
-const {wish, setWish} = useWishlist()
+const {wish, setWish, removeProduct} = useWishlist()
 
   return (
-    <AppContext.Provider value={{cart, setCart, alterProduct, wish, setWish}}>
+    <AppContext.Provider value={{cart, setCart, alterProduct, wish, setWish, removeProduct}}>
       <Component {...pageProps} />
     </AppContext.Provider>
   );
