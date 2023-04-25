@@ -9,6 +9,7 @@ import { BackToShop } from "../../components/common/BackToShop";
 import { AddToCart } from "../../components/catalog/AddToCart";
 import { AddToWishlist } from "../../components/catalog";
 import { WishControl } from "../../components/common";
+import { RelatedProducts } from "../../components/catalog/RelatedProducts";
 
 const ProductPage = () => {
   const router = useRouter();
@@ -45,7 +46,7 @@ const ProductPage = () => {
     );
   }
 
-  const { id, title, description, price, image } = product;
+  const { id, title, description, price, image, category } = product;
   const formattedPrice = new Intl.NumberFormat("en-US", {
     currency: "USD",
     style: "currency",
@@ -61,7 +62,7 @@ const ProductPage = () => {
         <div>
           <BackToShop></BackToShop>
         </div>
-        
+
         <header className="container px-4 flex justify-end items-end gap-2">
           <CartControl></CartControl>
 
@@ -96,7 +97,12 @@ const ProductPage = () => {
           </header>
         </section>
         <section className="border-t"></section>
-        <section className="container px-4 lg:px-0 mx-auto">v</section>
+        <section className="container px-4 lg:px-0 mx-auto"></section>
+
+        <RelatedProducts
+          productCategory={category}
+          productId={id}
+        ></RelatedProducts>
       </Layout>
     </>
   );
