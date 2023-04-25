@@ -58,9 +58,11 @@ const ProductPage = () => {
       </Head>
 
       <Layout>
-        <header className="container px-4 lg:px-0 mt-2 flex justify-evenly items-start">
+        <div>
           <BackToShop></BackToShop>
-
+        </div>
+        
+        <header className="container px-4 flex justify-end items-end gap-2">
           <CartControl></CartControl>
 
           <WishControl></WishControl>
@@ -88,8 +90,8 @@ const ProductPage = () => {
             </div>
 
             <div className="mt-12">
-             <AddToCart product={product}></AddToCart>
-             <AddToWishlist product={product}></AddToWishlist>
+              <AddToCart product={product}></AddToCart>
+              <AddToWishlist product={product}></AddToWishlist>
             </div>
           </header>
         </section>

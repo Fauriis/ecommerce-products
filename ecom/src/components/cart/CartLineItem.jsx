@@ -43,15 +43,8 @@ export const CartLineItem = ({ product }) => {
 
   return (
     <>
-      <button type="button" title={`Remove ${title}`} onClick={onClick}>
-        <AiOutlineClose
-          className="border rounded hover:bg-pink-500"
-          size="20"
-        ></AiOutlineClose>
-      </button>
-
-      <tr>
-        <td>
+      <main className="my-6 flex justify-around border rounded-md shadow-lg">
+        <div className="">
           <Link href={`/products/${id}`}>
             <Image
               alt={title}
@@ -62,55 +55,59 @@ export const CartLineItem = ({ product }) => {
               style={{ objectFit: "contain" }}
             ></Image>
           </Link>
-
+{/* 
           <Link href={`/products/${id}`}>
-            <p>{title}</p>
-          </Link>
-        </td>
-        <td></td>
-        <td>
-          <div className="">
-            <div className="border flex items-center justify-center gap-1 lg:mb-8 mb-4 ">
-              {quantity === 1 ? (
-                <span className="cursor-pointer">
-                  <TiDelete
-                    size={20}
-                    className="hover:text-pink-300"
-                    title="Delete"
-                    onClick={() => {
-                      alterProduct(id, -1);
-                    }}
-                  ></TiDelete>
-                </span>
-              ) : (
-                <button
-                  type="button"
-                  title="Delete"
-                  className=" p-2"
-                  onClick={() => {
-                    alterProduct(id, -1);
-                  }}
-                >
-                  -
-                </button>
-              )}
-              {quantity}
+            <p className="lg:block hidden ">{title}</p>
+          </Link> */}
+        </div>
 
-              <button
-                type="button"
-                title="Add"
-                className="p-2"
+        <div className="lg:mb-8 mt-10 ml-6">
+          {quantity === 1 ? (
+            <span className="cursor-pointer">
+              <TiDelete
+                size={20}
+                className="hover:text-pink-300"
+                title="Delete"
                 onClick={() => {
-                  alterProduct(id, 1);
+                  alterProduct(id, -1);
                 }}
-              >
-                +
-              </button>
-            </div>
-          </div>
-        </td>
-        <td>{formattedPrice}</td>
-      </tr>
+              ></TiDelete>
+            </span>
+          ) : (
+            <button
+              type="button"
+              title="Delete"
+              className="p-4"
+              onClick={() => {
+                alterProduct(id, -1);
+              }}
+            >
+              -
+            </button>
+          )}
+          {quantity}
+
+          <button
+            type="button"
+            title="Add"
+            className="p-4"
+            onClick={() => {
+              alterProduct(id, 1);
+            }}
+          >
+            +
+          </button>
+        </div>
+        
+        <div className="flex justify-center items-center ml-6 lg:mb-8">
+          {formattedPrice}
+        </div>
+
+        <button type="button" title={`Remove ${title}`} onClick={onClick}>
+          <AiOutlineClose color="red" size="20"></AiOutlineClose>
+        </button>
+      </main>
+      {/* <div className="border-b-2 border-zinc-300 w-80"></div> */}
     </>
   );
 };

@@ -28,10 +28,9 @@ return cartQty;
   return (
     <>
       <ul>
-        <li className="flex justify-center items-center ">
+        <li className="flex justify-end items-end">
           <Link href="/cart">
-            <AiOutlineShoppingCart size={30} className="hover:text-black" title="Your products here"></AiOutlineShoppingCart>
-            {cartQty}
+            <AiOutlineShoppingCart size={25} className="hover:text-black" title={`${cartQty} products`}></AiOutlineShoppingCart>
           </Link>
         </li>
       </ul>

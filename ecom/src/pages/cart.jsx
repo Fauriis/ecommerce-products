@@ -21,19 +21,20 @@ const Cart = () => {
 
       <Layout>
         <main className="container px-4 mx-auto">
-          <header className="flex justify-between text-zinc-400">
-            <div></div>
+          <header className="flex justify-between text-zinc-400 mx-4">
+            <h1 className="text-xl font-bold text-black">Cart</h1>
             <CartControl cart={cart}></CartControl>
           </header>
 
-          <section className="mt-16 grid grid-cols-12 gap-8">
-            <div className="col-span-8">
+          <section className="mt-10 lg:grid lg:grid-cols-12 lg:gap-8">
+            <div className="lg:col-span-8">
               <CartItems></CartItems>
-              <CartVoucher></CartVoucher>
             </div>
 
             <aside className="col-span-4">
               <CartTotals></CartTotals>
+              <CartVoucher></CartVoucher>
+
             </aside>
           </section>
         </main>

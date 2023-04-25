@@ -15,8 +15,8 @@ const Products = () => {
   const [paginatedProducts, setPaginatedProducts] = useState([]);
   // folosim niste valori default []
 
-  const cart = useCart(2)
-  const wish = useWishlist(2)
+  const cart = useCart(2);
+  const wish = useWishlist(2);
 
   return (
     <>
@@ -25,10 +25,11 @@ const Products = () => {
       </Head>
 
       <Layout>
-        <main className="container px-4 lg:px-4 mx-auto">
-          <header className="flex justify-between items-center text-zinc-400">
-            <GridControls setPerRow={setPerRow}></GridControls>
-
+        <main className="container px-4 lg:px-4 mx-auto mt-4 text-zinc-400">
+          <header className="flex justify-end mt-0 items-end gap-4 ">
+            <div className="flex-auto flex-wrap">
+              <GridControls setPerRow={setPerRow}></GridControls>
+            </div>
             <CartControl cart={cart}></CartControl>
             <WishControl wish={wish}></WishControl>
           </header>

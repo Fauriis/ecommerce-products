@@ -24,17 +24,17 @@ export const CartItems = () => {
   }
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Total</th>
-        </tr>
-      </thead>
+    <main>
+      <div className="">
+        <ul className="flex justify-around lg:items-start  items-center text-black font-bold ">
+          <li>Product</li>
+          <li>Count</li>
+          <li>Price</li>
+          <li className="lg:block hidden">Remove</li>
+        </ul>
+      </div>
 
-      <tbody>
+      <div>
         {products.map((product) => {
           return (
             <CartLineItem
@@ -43,7 +43,7 @@ export const CartItems = () => {
             ></CartLineItem>
           );
         })}
-      </tbody>
-    </table>
+      </div>
+    </main>
   );
 };

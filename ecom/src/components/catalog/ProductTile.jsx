@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-// import { MdAddShoppingCart } from "react-icons/md";
 
 export const ProductTile = ({ product }) => {
   const { title, price, image, id } = product;
